@@ -4,9 +4,7 @@ const messageTwo = document.getElementById("message-2");
 const searchWeather = (event) => {
   event.preventDefault();
   messageOne.textContent = "loading.....";
-  fetch(
-    "http://localhost:3000/weather/?address=" + event.target.address.value
-  ).then((response) => {
+  fetch("/weather/?address=" + event.target.address.value).then((response) => {
     response.json().then((data) => {
       if (data.error) {
         messageOne.textContent = data.error;
