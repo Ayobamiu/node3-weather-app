@@ -12,9 +12,13 @@ const forecast = (latitude, longitude, callback) => {
       );
     } else {
       callback(undefined, {
-        weather_descriptions: body.current.weather_descriptions,
+        name: "fore",
+        weather_descriptions: body.current.weather_descriptions[0],
         temperature: body.current.temperature,
         rain_chance: body.current.precip,
+        precip: body.current.precip,
+        feelslike: body.current.feelslike,
+        observation_time: body.current.observation_time,
       });
     }
   });

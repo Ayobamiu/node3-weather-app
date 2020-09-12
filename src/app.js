@@ -56,8 +56,17 @@ app.get("/weather", (req, res) => {
           return res.send({ error: error });
         }
         const { latitude, longitude, location } = data;
-        const { weather_descriptions, temperature, rain_chance } = forecastData;
+        const {
+          weather_descriptions,
+          temperature,
+          rain_chance,
+          precip,
+          feelslike,
+          observation_time,
+          name,
+        } = forecastData;
         res.send({
+          name: name,
           location: location,
           address: req.query.address,
           latitude: latitude,
@@ -65,6 +74,9 @@ app.get("/weather", (req, res) => {
           weather_descriptions: weather_descriptions,
           temperature: temperature,
           rain_chance: rain_chance,
+          precip: precip,
+          feelslike: feelslike,
+          observation_time: observation_time,
         });
       });
     });
