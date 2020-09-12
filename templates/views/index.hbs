@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/img/weather.png">
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Weather - Home</title>
+</head>
+
+<body>
+    <div>
+        {{>header}}
+        <p>Use this site to get your weather</p>
+        <form onsubmit="searchWeather(event)">
+            <input type="text" name="address" id="address" placeholder="Location...">
+            <button type="submit">Search</button>
+        </form>
+        <p id="message-1"></p>
+        <p id="message-2"></p>
+    </div>
+
+    {{>footer}}
+    <script src="./js/app.js"></script>
+</body>
+
+</html>
